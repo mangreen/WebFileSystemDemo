@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="orderByExample" ng-controller="ExampleController">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    
+	<title>{{dir}}</title>
+</head>
+<body>
+    <div>
+    	<h1>{{dir}}</h1>
+	  	<table class="bdrb">
+		    <tr class="bdrb">
+		      <th><a href="" ng-click="reverse=!reverse;order('name', reverse)">Name</a>
+		      <th><a href="" ng-click="reverse=!reverse;order('time', reverse)">Time</a></th>
+		      <th><a href="" ng-click="reverse=!reverse;order('size', reverse)">Size</a></th>
+		    </tr>
+		    <tr class="bdrb">
+		      <td>
+		      	<a href="" ng-click="getBack()">Parent</a>
+		      </td>
+		      <td></td>
+		      <td></td>
+		    </tr>
+		    <tr ng-repeat="file in files">
+		      <td>
+		      	<a href="{{dir + file.name}}" ng-click="getFile($event)">{{file.name}}</a>
+		      </td>
+		      <td>{{file.time}}</td>
+		      <td>{{file.size}}</td>
+		    </tr>
+	  	</table>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
